@@ -60,6 +60,30 @@ No profit caps, −15% disaster stop. Few trades, ~72-day average hold.
 | **full (8 pairs)** | **+164.7%** | +110.9% | **+53.8%** | 38 | 16.9% | 2.05 |
 | **full (majors: BTC/ETH/SOL/BNB)** | **+249.6%** | +183.9% | **+65.7%** | 29 | 10.0% | 3.28 |
 
+## RegimeLongShort (1d, perpetual futures, 1x leverage)
+
+Same regime logic, but shorts below the EMA instead of going to cash.
+Backtested in freqtrade futures mode (funding fees modeled, Binance perps).
+
+| Variant | Window | Total | Long leg | Short leg |
+|---|---|---|---|---|
+| naive mirror | bull | +191.5% | +242.9% | **−51.4%** |
+| naive mirror | recent bear | −7.7% | −29.2% | **+21.5%** |
+| naive mirror | full 4y | +0.2% | +37.4% | **−37.2%** |
+| + falling-EMA short filter | bull | +163.5% | +184.6% | −21.1% |
+| + falling-EMA short filter | recent bear | −15.0% | −24.9% | +9.9% |
+| + falling-EMA short filter | full 4y | +8.2% | +18.3% | **−10.1%** |
+
+**Shorting verdict:** mechanically easy (perps), economically unrewarding here.
+The short leg loses money over the full period in every configuration tested:
+bear-market rallies squeeze shorts out via the stop, crypto's long-run upward
+drift fights every short, and the regime signal can't distinguish a true
+sustained bear from chop below the EMA until after the fact. Shorts only paid
+in 2025–26 — a regime you can't identify in advance. Long-or-cash keeps the
+crash protection without paying the squeeze tax. (Side note: the futures sim's
+long leg also underperforms spot RegimeHold partly because shorts occupy trade
+slots and funding fees apply.)
+
 # Conclusions
 
 1. **No fast signal strategy beat buy-and-hold over 4 years.** All six lost
