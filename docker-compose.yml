@@ -1,0 +1,30 @@
+services:
+  freqtrade:
+    image: freqtradeorg/freqtrade:stable
+    restart: unless-stopped
+    volumes:
+      - ./user_data:/freqtrade/user_data
+      - ./config.json:/freqtrade/config.json:ro
+      - ./config.docker.json:/freqtrade/config.docker.json:ro
+    # API reachable from the host only via localhost (for SSH-tunnelled freqUI
+    # access) and from the dashboard container — never from the internet.
+    ports:
+      - "127.0.0.1:8080:8080"
+    command: >
+      trade
+      --config /freqtrade/config.json
+      --config /freqtrade/config.docker.json
+      --strategy TrendFollowStrategy
+      --logfile /freqtrade/user_data/logs/freqtrade.log
+
+  dashboard:
+    build: ./dashboard
+    restart: unless-stopped
+    environment:
+      FT_API_URL: http://freqtrade:8080
+      FT_USERNAME: trader
+      FT_PASSWORD: paper-trading-only
+    ports:
+      - "80:8000"
+    depends_on:
+      - freqtrade

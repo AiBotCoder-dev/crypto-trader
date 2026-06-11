@@ -1,0 +1,18 @@
+# Secrets — local freqtrade config contains API-server credentials
+config.json
+
+# Local environment / bulk data (not needed on GitHub)
+.venv/
+__pycache__/
+*.pyc
+.claude/
+user_data/data/
+user_data/logs/
+user_data/backtest_results/
+user_data/plot/
+user_data/hyperopts/
+user_data/hyperopt_results/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log

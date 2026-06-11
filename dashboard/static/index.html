@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Trader — Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #e6edf3; --muted: #8b949e;
+    --green: #3fb950; --red: #f85149; --accent: #58a6ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text); min-height: 100vh;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 24px;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+  h1 { font-size: 1.5rem; font-weight: 650; }
+  .badge {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+    padding: 4px 10px; border-radius: 999px; text-transform: uppercase;
+  }
+  .badge.paper { background: rgba(88,166,255,0.15); color: var(--accent); border: 1px solid var(--accent); }
+  .badge.live  { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid var(--red); }
+  .meta { color: var(--muted); font-size: 0.85rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px;
+  }
+  .card .label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .card .value { font-size: 1.55rem; font-weight: 650; }
+  .card .sub { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+  .pos { color: var(--green); } .neg { color: var(--red); }
+  h2 { font-size: 1.02rem; font-weight: 600; margin: 22px 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  tr:last-child td { border-bottom: none; }
+  .empty { color: var(--muted); padding: 14px 10px; font-size: 0.88rem; }
+  .chart-card { height: 280px; position: relative; }
+  footer { color: var(--muted); font-size: 0.78rem; margin-top: 26px; line-height: 1.5; }
+  #updated { color: var(--muted); font-size: 0.78rem; margin-left: auto; }
+  #error { display: none; background: rgba(248,81,73,0.12); border: 1px solid var(--red);
+           color: var(--red); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="botname">Crypto Trader</h1>
+    <span class="badge paper" id="mode">Paper</span>
+    <span class="meta" id="strategy"></span>
+    <span id="updated"></span>
+  </header>
+
+  <div id="error"></div>
+
+  <div class="grid">
+    <div class="card"><div class="label">Balance</div><div class="value" id="balance">—</div><div class="sub" id="balance-sub"></div></div>
+    <div class="card"><div class="label">Closed Profit</div><div class="value" id="profit">—</div><div class="sub" id="profit-sub"></div></div>
+    <div class="card"><div class="label">Win Rate</div><div class="value" id="winrate">—</div><div class="sub" id="winrate-sub"></div></div>
+    <div class="card"><div class="label">Open Trades</div><div class="value" id="opencount">—</div><div class="sub" id="open-sub"></div></div>
+  </div>
+
+  <div class="card chart-card"><canvas id="dailyChart"></canvas></div>
+
+  <h2>Open trades</h2>
+  <div class="card" id="open-card"><div class="empty">No open trades.</div></div>
+
+  <h2>Recent closed trades</h2>
+  <div class="card" id="closed-card"><div class="empty">No closed trades yet.</div></div>
+
+  <footer>
+    Paper-trading bot — all trades are simulated with fake money against live market prices.
+    Read-only dashboard; refreshes every 30 seconds.
+  </footer>
+</div>
+
+<script>
+let chart = null;
+const fmt = (n, d = 2) => n == null ? "—" : Number(n).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+const cls = n => n >= 0 ? "pos" : "neg";
+const sign = n => (n >= 0 ? "+" : "") + fmt(n);
+
+function table(rows, headers) {
+  const t = document.createElement("table");
+  t.innerHTML = "<thead><tr>" + headers.map(h => `<th>${h}</th>`).join("") + "</tr></thead>";
+  const tb = document.createElement("tbody");
+  for (const r of rows) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = r.join("");
+    tb.appendChild(tr);
+  }
+  t.appendChild(tb);
+  return t;
+}
+
+async function refresh() {
+  try {
+    const res = await fetch("/api/summary");
+    if (!res.ok) throw new Error("API returned " + res.status);
+    const d = await res.json();
+    document.getElementById("error").style.display = "none";
+
+    document.getElementById("botname").textContent = d.bot_name || "Crypto Trader";
+    const mode = document.getElementById("mode");
+    mode.textContent = d.dry_run ? "Paper trading" : "LIVE";
+    mode.className = "badge " + (d.dry_run ? "paper" : "live");
+    document.getElementById("strategy").textContent = (d.strategy || "") + " · " + (d.exchange || "");
+
+    const sc = d.stake_currency || "USDT";
+    const p = d.profit || {};
+    document.getElementById("balance").textContent = fmt(d.balance_total) + " " + sc;
+    document.getElementById("balance-sub").textContent = "simulated wallet";
+    const pe = document.getElementById("profit");
+    pe.textContent = sign(p.profit_closed_coin) + " " + sc;
+    pe.className = "value " + cls(p.profit_closed_coin || 0);
+    document.getElementById("profit-sub").textContent = (p.trade_count ?? 0) + " trades total";
+    const wins = p.winning_trades ?? 0, losses = p.losing_trades ?? 0;
+    const closedCount = wins + losses;
+    document.getElementById("winrate").textContent = closedCount ? fmt(100 * wins / closedCount, 1) + "%" : "—";
+    document.getElementById("winrate-sub").textContent = wins + " wins / " + losses + " losses";
+    document.getElementById("opencount").textContent = (d.open_trades || []).length;
+    document.getElementById("open-sub").textContent = "best pair: " + (p.best_pair || "—");
+    document.getElementById("updated").textContent = "updated " + new Date().toLocaleTimeString();
+
+    // Daily profit chart
+    const daily = (d.daily || []).slice().reverse();
+    const labels = daily.map(x => x.date);
+    const values = daily.map(x => x.abs_profit);
+    const colors = values.map(v => v >= 0 ? "rgba(63,185,80,0.8)" : "rgba(248,81,73,0.8)");
+    if (chart) chart.destroy();
+    chart = new Chart(document.getElementById("dailyChart"), {
+      type: "bar",
+      data: { labels, datasets: [{ data: values, backgroundColor: colors, borderRadius: 3 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, title: { display: true, text: "Daily profit (" + sc + ", last 30 days)", color: "#8b949e" } },
+        scales: {
+          x: { ticks: { color: "#8b949e", maxTicksLimit: 10 }, grid: { display: false } },
+          y: { ticks: { color: "#8b949e" }, grid: { color: "#21262d" } }
+        }
+      }
+    });
+
+    // Open trades
+    const openCard = document.getElementById("open-card");
+    const open = d.open_trades || [];
+    openCard.innerHTML = "";
+    if (!open.length) openCard.innerHTML = '<div class="empty">No open trades.</div>';
+    else openCard.appendChild(table(open.map(t => {
+      const pct = t.profit_pct ?? (t.profit_ratio != null ? t.profit_ratio * 100 : null);
+      return [
+        `<td>${t.pair}</td>`,
+        `<td class="${cls(pct ?? 0)}">${sign(pct)}%</td>`,
+        `<td class="${cls(t.profit_abs ?? 0)}">${sign(t.profit_abs)} ${sc}</td>`,
+        `<td>${fmt(t.stake_amount)} ${sc}</td>`,
+        `<td>${(t.open_date || "").replace("T", " ").slice(0, 16)}</td>`
+      ];
+    }), ["Pair", "Profit %", "Profit", "Stake", "Opened"]));
+
+    // Closed trades
+    const closedCard = document.getElementById("closed-card");
+    const closed = d.closed_trades || [];
+    closedCard.innerHTML = "";
+    if (!closed.length) closedCard.innerHTML = '<div class="empty">No closed trades yet.</div>';
+    else closedCard.appendChild(table(closed.map(t => {
+      const pct = t.profit_pct ?? (t.profit_ratio != null ? t.profit_ratio * 100 : null);
+      return [
+        `<td>${t.pair}</td>`,
+        `<td class="${cls(pct ?? 0)}">${sign(pct)}%</td>`,
+        `<td class="${cls(t.profit_abs ?? 0)}">${sign(t.profit_abs)} ${sc}</td>`,
+        `<td>${t.exit_reason || ""}</td>`,
+        `<td>${(t.close_date || "").replace("T", " ").slice(0, 16)}</td>`
+      ];
+    }), ["Pair", "Profit %", "Profit", "Exit reason", "Closed"]));
+  } catch (err) {
+    const e = document.getElementById("error");
+    e.textContent = "Could not reach the bot: " + err.message;
+    e.style.display = "block";
+  }
+}
+refresh();
+setInterval(refresh, 30000);
+</script>
+</body>
+</html>
