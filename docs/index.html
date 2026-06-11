@@ -65,6 +65,9 @@
 
   <div class="card chart-card"><canvas id="equityChart"></canvas></div>
 
+  <h2>Entry &amp; exit signals</h2>
+  <div class="card" id="signals-card"><div class="empty">No signal data yet.</div></div>
+
   <h2>Open trades</h2>
   <div class="card" id="open-card"><div class="empty">No open trades.</div></div>
 
@@ -144,6 +147,28 @@ async function refresh() {
         }
       }
     });
+
+    // Signals table
+    const sigCard = document.getElementById("signals-card");
+    const sigs = d.signals || [];
+    sigCard.innerHTML = "";
+    if (!sigs.length) sigCard.innerHTML = '<div class="empty">No signal data yet.</div>';
+    else sigCard.appendChild(table(sigs.map(s => {
+      const regimeColor = s.regime === "bull" ? "pos" : s.regime === "bear" ? "neg" : "";
+      const status = s.holding ? "HOLDING" : "cash";
+      const trigger = s.holding
+        ? `exit if daily close &lt; ${fmt(s.exit_level, 4)}`
+        : s.regime === "bull" ? "entering next run"
+        : `enter if daily close &gt; ${fmt(s.entry_level, 4)}`;
+      return [
+        `<td>${s.pair}</td>`,
+        `<td>${fmt(s.price, 4)}</td>`,
+        `<td class="${regimeColor}">${s.regime}</td>`,
+        `<td>${status}</td>`,
+        `<td>${trigger}</td>`,
+        `<td>${sign(s.distance_pct)}%</td>`
+      ];
+    }), ["Pair", "Price", "Regime", "Position", "Trigger", "Trigger distance"]));
 
     const openCard = document.getElementById("open-card");
     const open = d.open_trades || [];
