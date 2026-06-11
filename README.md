@@ -25,6 +25,29 @@ There is no bot that reliably makes "crazy profit" every day. The goals here are
   (via `CryptoTraderBot.vbs` in the Startup folder)
 - `.venv/` — Python virtual environment with freqtrade installed
 
+## Free hosting on GitHub (bot + website, $0)
+
+The repo doubles as a free 24/7 paper trader:
+
+- `gh-bot/bot.py` — self-contained paper-trading engine (ccxt + pandas, no
+  freqtrade needed). Trades the TrendFollow rules against live **Kraken**
+  public prices; wallet state persists in `gh-bot/state.json`.
+- `.github/workflows/trade.yml` — GitHub Actions runs the engine **every hour**
+  on GitHub's servers (free for public repos) and commits the results.
+- `docs/` — static dashboard served free by **GitHub Pages**; every bot run
+  refreshes `docs/data.json`.
+
+One-time setup after pushing to GitHub:
+1. Repo must be **public** (free Actions minutes + free Pages).
+2. Settings → Pages → Source: *Deploy from a branch* → `main` / `docs`.
+3. Actions tab → enable workflows → run "Paper trade" once manually.
+
+Caveats: scheduled runs can be delayed by a few minutes (GitHub cron is
+best-effort), and GitHub pauses schedules after ~60 days without repo
+activity — visiting the Actions tab and re-enabling fixes it. This setup is
+fine for paper trading; never put real exchange API keys in this repo or in
+Actions for live trading.
+
 ## Websites
 
 - **Dashboard (read-only):** http://127.0.0.1:3000 — balance, profit, trades, daily chart
