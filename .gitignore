@@ -16,3 +16,4 @@ user_data/hyperopt_results/
 *.sqlite-shm
 *.sqlite-wal
 *.log
+gh-bot/last_events.json

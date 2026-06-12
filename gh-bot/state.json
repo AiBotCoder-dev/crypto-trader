@@ -16,9 +16,30 @@
    "equity": 10000.0
   },
   {
+<<<<<<< Updated upstream
    "t": "2026-06-11 23:56:17",
+=======
+   "t": "2026-06-12 00:18:35",
+>>>>>>> Stashed changes
    "equity": 10000.0
   }
  ],
- "created_at": "2026-06-11 22:35:22"
+ "created_at": "2026-06-11 22:35:22",
+ "regimes": {
+  "BTC/USD": "bear",
+  "ETH/USD": "bear",
+  "SOL/USD": "bear",
+  "XRP/USD": "bear",
+  "ADA/USD": "bear",
+  "LINK/USD": "bear",
+  "AVAX/USD": "bear",
+  "DOT/USD": "bear",
+  "DOGE/USD": "bear",
+  "LTC/USD": "bear",
+  "BCH/USD": "bear",
+  "ATOM/USD": "bear",
+  "UNI/USD": "bear",
+  "AAVE/USD": "bear",
+  "FIL/USD": "bear"
+ }
 }

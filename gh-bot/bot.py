@@ -28,6 +28,7 @@ import pandas as pd
 ROOT = os.path.dirname(os.path.abspath(__file__))
 STATE_FILE = os.path.join(ROOT, "state.json")
 SITE_DATA = os.path.join(ROOT, "..", "docs", "data.json")
+EVENTS_FILE = os.path.join(ROOT, "last_events.json")  # read by the alert step, not committed
 
 EXCHANGE_ID = "kraken"  # public data works worldwide, incl. GitHub's US runners
 PAIRS = [
@@ -89,7 +90,7 @@ def fetch_pair(exchange, pair: str) -> dict:
     }
 
 
-def close_trade(state: dict, trade: dict, price: float, reason: str) -> None:
+def close_trade(state: dict, trade: dict, price: float, reason: str, events: list) -> None:
     proceeds = trade["qty"] * price * (1 - FEE)
     state["cash"] += proceeds
     profit_abs = proceeds - trade["stake"]
@@ -107,10 +108,12 @@ def close_trade(state: dict, trade: dict, price: float, reason: str) -> None:
         }
     )
     state["open_trades"] = [t for t in state["open_trades"] if t["pair"] != trade["pair"]]
-    print(f"CLOSE {trade['pair']} @ {price:.4f} ({reason}) profit {profit_abs:+.2f} USD")
+    msg = f"CLOSE {trade['pair']} @ {price:.4f} ({reason}) profit {profit_abs:+.2f} USD"
+    events.append(msg)
+    print(msg)
 
 
-def open_trade(state: dict, pair: str, price: float, equity: float) -> None:
+def open_trade(state: dict, pair: str, price: float, equity: float, events: list) -> None:
     stake = min(equity / len(PAIRS), state["cash"])
     if stake < 10:  # not enough cash for a meaningful position
         return
@@ -125,11 +128,14 @@ def open_trade(state: dict, pair: str, price: float, equity: float) -> None:
             "open_time": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", ""),
         }
     )
-    print(f"OPEN  {pair} @ {price:.4f} stake {stake:.2f} USD")
+    msg = f"OPEN  {pair} @ {price:.4f} stake {stake:.2f} USD"
+    events.append(msg)
+    print(msg)
 
 
 def main() -> None:
     state = load_state()
+    events: list[str] = []
     exchange = getattr(ccxt, EXCHANGE_ID)({"enableRateLimit": True})
 
     infos: dict[str, dict] = {}
@@ -138,6 +144,17 @@ def main() -> None:
             infos[pair] = fetch_pair(exchange, pair)
         except Exception as exc:  # one bad pair shouldn't kill the whole run
             print(f"WARN  {pair}: data fetch failed: {exc}")
+
+    # Regime-flip alerts (skip first sighting of a pair to avoid noise)
+    prev_regimes = state.get("regimes", {})
+    for pair, info in infos.items():
+        old = prev_regimes.get(pair)
+        if old and old != info["regime"]:
+            events.append(
+                f"REGIME {pair}: {old} -> {info['regime']} "
+                f"(price {info['price']}, entry@{info['entry_level']:.4f}, exit@{info['exit_level']:.4f})"
+            )
+    state["regimes"] = {pair: info["regime"] for pair, info in infos.items()}
 
     def price_of(trade):
         return infos[trade["pair"]]["price"] if trade["pair"] in infos else trade["open_price"]
@@ -151,15 +168,15 @@ def main() -> None:
             continue
         profit = info["price"] / trade["open_price"] - 1
         if profit <= STOPLOSS:
-            close_trade(state, trade, info["price"], "stop_loss")
+            close_trade(state, trade, info["price"], "stop_loss", events)
         elif info["last_daily_close"] < info["exit_level"]:
-            close_trade(state, trade, info["price"], "regime_exit")
+            close_trade(state, trade, info["price"], "regime_exit", events)
 
     # Entries: any pair in a bull regime that we don't already hold
     held = {t["pair"] for t in state["open_trades"]}
     for pair, info in infos.items():
         if pair not in held and info["regime"] == "bull":
-            open_trade(state, pair, info["price"], equity)
+            open_trade(state, pair, info["price"], equity, events)
 
     equity = state["cash"] + sum(t["qty"] * price_of(t) for t in state["open_trades"])
     state["equity_history"].append({"t": now_utc(), "equity": round(equity, 2)})
@@ -223,9 +240,13 @@ def main() -> None:
     with open(SITE_DATA, "w", encoding="utf-8") as fh:
         json.dump(site, fh, indent=1)
 
+    with open(EVENTS_FILE, "w", encoding="utf-8") as fh:
+        json.dump({"t": now_utc(), "events": events}, fh, indent=1)
+
     print(
         f"DONE  {now_utc()} | equity {equity:.2f} USD | cash {state['cash']:.2f} | "
-        f"open {len(state['open_trades'])}/{len(PAIRS)} | closed {len(closed_trades)}"
+        f"open {len(state['open_trades'])}/{len(PAIRS)} | closed {len(closed_trades)} | "
+        f"events {len(events)}"
     )
 
 
