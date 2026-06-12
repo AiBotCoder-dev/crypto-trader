@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
  "generated_at": "2026-06-11 23:56:17",
-=======
- "generated_at": "2026-06-12 00:18:35",
->>>>>>> Stashed changes
  "exchange": "kraken",
  "timeframe": "1d",
  "strategy": "RegimeHold (200-day EMA, +2%/-3% bands, no profit caps)",
@@ -21,275 +17,168 @@
  "signals": [
   {
    "pair": "AAVE/USD",
-<<<<<<< Updated upstream
    "price": 64.22,
    "ema200": 128.311952,
-=======
-   "price": 64.4,
-   "ema200": 128.049251,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 130.610236,
-   "exit_level": 124.207774,
+   "entry_level": 130.878191,
+   "exit_level": 124.462594,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 103.8
-=======
-   "distance_pct": 102.81
->>>>>>> Stashed changes
   },
   {
    "pair": "ADA/USD",
-   "price": 0.169816,
-   "ema200": 0.337973,
+   "price": 0.170382,
+   "ema200": 0.337648,
    "regime": "bear",
    "holding": false,
-   "entry_level": 0.344733,
-   "exit_level": 0.327834,
+   "entry_level": 0.344401,
+   "exit_level": 0.327519,
    "stop_level": null,
-   "distance_pct": 103.0
+   "distance_pct": 102.13
   },
   {
    "pair": "ATOM/USD",
-<<<<<<< Updated upstream
    "price": 2.0242,
    "ema200": 2.230077,
-=======
-   "price": 2.0121,
-   "ema200": 2.230687,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 2.2753,
-   "exit_level": 2.163766,
+   "entry_level": 2.274678,
+   "exit_level": 2.163174,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 12.37
   },
   {
    "pair": "AVAX/USD",
    "price": 6.64,
    "ema200": 11.479334,
-=======
-   "distance_pct": 13.08
-  },
-  {
-   "pair": "AVAX/USD",
-   "price": 6.643,
-   "ema200": 11.468896,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 11.698274,
-   "exit_level": 11.124829,
+   "entry_level": 11.70892,
+   "exit_level": 11.134954,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 76.34
   },
   {
    "pair": "BCH/USD",
    "price": 205.25,
    "ema200": 456.094782,
-=======
-   "distance_pct": 76.1
-  },
-  {
-   "pair": "BCH/USD",
-   "price": 205.61,
-   "ema200": 453.314194,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 462.380478,
-   "exit_level": 439.714768,
+   "entry_level": 465.216678,
+   "exit_level": 442.411939,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 126.66
   },
   {
    "pair": "BTC/USD",
    "price": 63556.0,
    "ema200": 80146.109162,
-=======
-   "distance_pct": 124.88
-  },
-  {
-   "pair": "BTC/USD",
-   "price": 63561.5,
-   "ema200": 79978.673411,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 81578.246879,
-   "exit_level": 77579.313209,
+   "entry_level": 81749.031345,
+   "exit_level": 77741.725887,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 28.63
   },
   {
    "pair": "DOGE/USD",
    "price": 0.085979,
    "ema200": 0.118836,
-=======
-   "distance_pct": 28.35
-  },
-  {
-   "pair": "DOGE/USD",
-   "price": 0.08588,
-   "ema200": 0.118681,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 0.121054,
-   "exit_level": 0.11512,
+   "entry_level": 0.121213,
+   "exit_level": 0.115271,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 40.98
   },
   {
    "pair": "DOT/USD",
    "price": 0.9514,
    "ema200": 1.693985,
-=======
-   "distance_pct": 40.96
-  },
-  {
-   "pair": "DOT/USD",
-   "price": 0.9513,
-   "ema200": 1.691006,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 1.724827,
-   "exit_level": 1.640276,
+   "entry_level": 1.727865,
+   "exit_level": 1.643166,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 81.61
   },
   {
    "pair": "ETH/USD",
    "price": 1672.55,
    "ema200": 2503.156049,
-=======
-   "distance_pct": 81.31
-  },
-  {
-   "pair": "ETH/USD",
-   "price": 1671.42,
-   "ema200": 2497.334123,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 2547.280805,
-   "exit_level": 2422.414099,
+   "entry_level": 2553.21917,
+   "exit_level": 2428.061367,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 52.65
-=======
-   "distance_pct": 52.4
->>>>>>> Stashed changes
   },
   {
    "pair": "FIL/USD",
-   "price": 0.759,
-   "ema200": 1.172418,
+   "price": 0.76,
+   "ema200": 1.17509,
    "regime": "bear",
    "holding": false,
-   "entry_level": 1.195867,
-   "exit_level": 1.137246,
+   "entry_level": 1.198592,
+   "exit_level": 1.139838,
    "stop_level": null,
-   "distance_pct": 57.56
+   "distance_pct": 57.71
   },
   {
    "pair": "LINK/USD",
-<<<<<<< Updated upstream
    "price": 7.88649,
    "ema200": 11.136905,
-=======
-   "price": 7.87667,
-   "ema200": 11.256321,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 11.481447,
-   "exit_level": 10.918631,
+   "entry_level": 11.359643,
+   "exit_level": 10.802798,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 44.04
-=======
-   "distance_pct": 45.77
->>>>>>> Stashed changes
   },
   {
    "pair": "LTC/USD",
-   "price": 42.47,
-   "ema200": 64.125456,
+   "price": 42.5,
+   "ema200": 64.359754,
    "regime": "bear",
    "holding": false,
-   "entry_level": 65.407965,
-   "exit_level": 62.201692,
+   "entry_level": 65.646949,
+   "exit_level": 62.428961,
    "stop_level": null,
-   "distance_pct": 54.01
+   "distance_pct": 54.46
   },
   {
    "pair": "SOL/USD",
    "price": 66.81,
-<<<<<<< Updated upstream
    "ema200": 104.473677,
-=======
-   "ema200": 104.168205,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 106.251569,
-   "exit_level": 101.043158,
+   "entry_level": 106.563151,
+   "exit_level": 101.339467,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 59.5
   },
   {
    "pair": "UNI/USD",
    "price": 2.4916,
    "ema200": 4.384651,
-=======
-   "distance_pct": 59.04
-  },
-  {
-   "pair": "UNI/USD",
-   "price": 2.5065,
-   "ema200": 4.365751,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 4.453066,
-   "exit_level": 4.234778,
+   "entry_level": 4.472344,
+   "exit_level": 4.253111,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 79.5
   },
   {
    "pair": "XRP/USD",
    "price": 1.14183,
    "ema200": 1.641856,
-=======
-   "distance_pct": 77.66
-  },
-  {
-   "pair": "XRP/USD",
-   "price": 1.13939,
-   "ema200": 1.636004,
->>>>>>> Stashed changes
    "regime": "bear",
    "holding": false,
-   "entry_level": 1.668724,
-   "exit_level": 1.586924,
+   "entry_level": 1.674693,
+   "exit_level": 1.5926,
    "stop_level": null,
-<<<<<<< Updated upstream
    "distance_pct": 46.67
-=======
-   "distance_pct": 46.46
->>>>>>> Stashed changes
   }
  ],
  "open_trades": [],
@@ -308,11 +197,7 @@
    "equity": 10000.0
   },
   {
-<<<<<<< Updated upstream
    "t": "2026-06-11 23:56:17",
-=======
-   "t": "2026-06-12 00:18:35",
->>>>>>> Stashed changes
    "equity": 10000.0
   }
  ]
