@@ -100,3 +100,52 @@ slots and funding fees apply.)
    through swings); the 2025–26 bear cost it −34% via repeated false
    recoveries; results assume 0.1% fees and no slippage; and 4 years /
    38 trades is a small sample — paper trading it forward is the real test.
+
+# Robustness test (research/robustness.py)
+
+Simplified daily-bar simulator (next-open execution, 0.1% fee, equal-weight
+8 majors). Use for *relative* comparison across configs, not absolute numbers.
+Buy & hold over the full period: +46.3%.
+
+## Parameter sweep — 75 configs (EMA 100–300 × entry 0–5% × exit −1 to −5%)
+
+| | Result |
+|---|---|
+| Share of configs beating buy & hold (full period) | **79%** |
+| Full-period return: median / min / max | +60.1% / +30.6% / +90.8% |
+| Our deployed config (ema200, +2%/−3%) | +62.1% (mid-pack, not cherry-picked) |
+
+The edge is **not** an artifact of one lucky parameter set: nearly four in
+five configurations beat buy-and-hold, and the median config beat it by ~14
+points. Longer EMAs (250–300) scored highest in-sample — but see below before
+trusting that.
+
+## Walk-forward — tune on 2022-08…2024-12, trade blind on 2025-01…2026-06
+
+| | Return |
+|---|---|
+| Best in-sample config (ema300, +5%/−5%), in-sample | +163.0% |
+| Same config, **out-of-sample** | **−27.4%** |
+| Buy & hold, out-of-sample | −55.2% |
+| Median config, out-of-sample | −28.4% |
+
+**The sobering finding:** *no* config made money out-of-sample. The 2025–26
+window was a deep bear (market −55%), and the strategy lost ~28% in it. The
++165% headline number lives almost entirely in the 2023–24 bull (our config:
++128% in-sample).
+
+## What this means
+
+1. **The edge is real and robust, but it is *relative*, not absolute.**
+   RegimeHold reliably loses about half what the market loses in bears and
+   captures most of the bull. It is a loss-mitigation / regime-defense system,
+   not a money printer. "Beating the market" in 2025–26 meant −28% vs −55%.
+2. **Out-of-sample outperformance survived** (−27% vs −55%) even though
+   absolute returns were negative — the relative edge generalized to unseen
+   data, which is the test most overfit strategies fail.
+3. **Our deployed parameters are sound** — mid-pack, not curve-fit to the best
+   cell. No reason to change them.
+4. **Honest bottom line for real money:** this system would have protected
+   capital in the recent bear far better than holding, and roughly matched the
+   bull — but it would not have *grown* an account over the last 18 months.
+   Its value is risk-adjusted return and drawdown control, not daily profit.
