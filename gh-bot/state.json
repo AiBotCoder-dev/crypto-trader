@@ -1910,6 +1910,10 @@
   {
    "t": "2026-08-03 23:09:03",
    "equity": 9980.94
+  },
+  {
+   "t": "2026-08-04 03:16:47",
+   "equity": 9976.35
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -1926,7 +1930,7 @@
   "LTC/USD": "bear",
   "BCH/USD": "bear",
   "ATOM/USD": "bear",
-  "UNI/USD": "bull",
+  "UNI/USD": "neutral",
   "AAVE/USD": "bear",
   "FIL/USD": "bear"
  }
