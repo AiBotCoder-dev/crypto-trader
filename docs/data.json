@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-19 22:30:36",
+ "generated_at": "2026-08-19 23:28:01",
  "exchange": "kraken",
  "timeframe": "1d",
  "strategy": "RegimeHold (200-day EMA, +2%/-3% bands, no profit caps)",
@@ -17,168 +17,168 @@
  "signals": [
   {
    "pair": "AAVE/USD",
-   "price": 95.35,
+   "price": 95.47,
    "ema200": 105.550975,
    "regime": "bear",
    "holding": false,
    "entry_level": 107.661995,
    "exit_level": 102.384446,
    "stop_level": null,
-   "distance_pct": 12.91
+   "distance_pct": 12.77
   },
   {
    "pair": "ADA/USD",
-   "price": 0.189346,
+   "price": 0.186595,
    "ema200": 0.244638,
    "regime": "bear",
    "holding": false,
    "entry_level": 0.24953,
    "exit_level": 0.237298,
    "stop_level": null,
-   "distance_pct": 31.79
+   "distance_pct": 33.73
   },
   {
    "pair": "ATOM/USD",
-   "price": 1.5021,
+   "price": 1.4965,
    "ema200": 1.814918,
    "regime": "bear",
    "holding": false,
    "entry_level": 1.851216,
    "exit_level": 1.76047,
    "stop_level": null,
-   "distance_pct": 23.24
+   "distance_pct": 23.7
   },
   {
    "pair": "AVAX/USD",
-   "price": 6.794,
+   "price": 6.764,
    "ema200": 8.713428,
    "regime": "bear",
    "holding": false,
    "entry_level": 8.887697,
    "exit_level": 8.452025,
    "stop_level": null,
-   "distance_pct": 30.82
+   "distance_pct": 31.4
   },
   {
    "pair": "BCH/USD",
-   "price": 211.34,
+   "price": 212.52,
    "ema200": 332.104876,
    "regime": "bear",
    "holding": false,
    "entry_level": 338.746973,
    "exit_level": 322.14173,
    "stop_level": null,
-   "distance_pct": 60.29
+   "distance_pct": 59.4
   },
   {
    "pair": "BTC/USD",
-   "price": 69113.0,
+   "price": 69347.9,
    "ema200": 71664.170707,
    "regime": "bear",
    "holding": false,
    "entry_level": 73097.454122,
    "exit_level": 69514.245586,
    "stop_level": null,
-   "distance_pct": 5.77
+   "distance_pct": 5.41
   },
   {
    "pair": "DOGE/USD",
-   "price": 0.07491,
+   "price": 0.074646,
    "ema200": 0.094643,
    "regime": "bear",
    "holding": false,
    "entry_level": 0.096536,
    "exit_level": 0.091804,
    "stop_level": null,
-   "distance_pct": 28.87
+   "distance_pct": 29.33
   },
   {
    "pair": "DOT/USD",
-   "price": 0.7946,
+   "price": 0.7878,
    "ema200": 1.225856,
    "regime": "bear",
    "holding": false,
    "entry_level": 1.250373,
    "exit_level": 1.189081,
    "stop_level": null,
-   "distance_pct": 57.36
+   "distance_pct": 58.72
   },
   {
    "pair": "ETH/USD",
-   "price": 2254.77,
+   "price": 2252.73,
    "ema200": 2140.887651,
    "regime": "bear",
    "holding": false,
    "entry_level": 2183.705404,
    "exit_level": 2076.661021,
    "stop_level": null,
-   "distance_pct": -3.15
+   "distance_pct": -3.06
   },
   {
    "pair": "FIL/USD",
-   "price": 0.683,
+   "price": 0.672,
    "ema200": 0.916573,
    "regime": "bear",
    "holding": false,
    "entry_level": 0.934904,
    "exit_level": 0.889076,
    "stop_level": null,
-   "distance_pct": 36.88
+   "distance_pct": 39.12
   },
   {
    "pair": "LINK/USD",
-   "price": 10.691,
+   "price": 10.53,
    "ema200": 9.479867,
    "regime": "neutral",
    "holding": false,
    "entry_level": 9.669465,
    "exit_level": 9.195471,
    "stop_level": null,
-   "distance_pct": -9.56
+   "distance_pct": -8.17
   },
   {
    "pair": "LTC/USD",
-   "price": 46.61,
+   "price": 46.57,
    "ema200": 53.65596,
    "regime": "bear",
    "holding": false,
    "entry_level": 54.729079,
    "exit_level": 52.046281,
    "stop_level": null,
-   "distance_pct": 17.42
+   "distance_pct": 17.52
   },
   {
    "pair": "SOL/USD",
-   "price": 85.33,
+   "price": 85.43,
    "ema200": 89.435722,
    "regime": "bear",
    "holding": false,
    "entry_level": 91.224436,
    "exit_level": 86.75265,
    "stop_level": null,
-   "distance_pct": 6.91
+   "distance_pct": 6.78
   },
   {
    "pair": "UNI/USD",
-   "price": 3.6394,
+   "price": 3.6415,
    "ema200": 3.761656,
    "regime": "bear",
    "holding": false,
    "entry_level": 3.836889,
    "exit_level": 3.648806,
    "stop_level": null,
-   "distance_pct": 5.43
+   "distance_pct": 5.37
   },
   {
    "pair": "XRP/USD",
-   "price": 1.1205,
+   "price": 1.10373,
    "ema200": 1.339367,
    "regime": "bear",
    "holding": false,
    "entry_level": 1.366154,
    "exit_level": 1.299186,
    "stop_level": null,
-   "distance_pct": 21.92
+   "distance_pct": 23.78
   }
  ],
  "open_trades": [],
@@ -3222,6 +3222,10 @@
   },
   {
    "t": "2026-08-19 22:30:36",
+   "equity": 9916.96
+  },
+  {
+   "t": "2026-08-19 23:28:01",
    "equity": 9916.96
   }
  ]
