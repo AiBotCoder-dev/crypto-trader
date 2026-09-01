@@ -3768,6 +3768,10 @@
   {
    "t": "2026-08-31 21:51:05",
    "equity": 10221.53
+  },
+  {
+   "t": "2026-09-01 01:10:05",
+   "equity": 10207.13
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -3775,7 +3779,7 @@
   "BTC/USD": "bull",
   "ETH/USD": "bull",
   "SOL/USD": "bull",
-  "XRP/USD": "neutral",
+  "XRP/USD": "bull",
   "ADA/USD": "bear",
   "LINK/USD": "bull",
   "AVAX/USD": "bear",
