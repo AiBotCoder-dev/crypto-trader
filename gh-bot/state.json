@@ -1,5 +1,5 @@
 {
- "cash": 5232.259804102964,
+ "cash": 4521.854594576419,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -49,6 +49,13 @@
    "qty": 5.397430735999426,
    "stake": 672.487184241677,
    "open_time": "2026-08-22T01:36:11"
+  },
+  {
+   "pair": "LTC/USD",
+   "open_price": 54.43,
+   "qty": 13.017787175854787,
+   "stake": 710.4052095265451,
+   "open_time": "2026-09-06T00:46:05"
   }
  ],
  "closed_trades": [
@@ -3896,6 +3903,10 @@
   {
    "t": "2026-09-05 22:45:40",
    "equity": 10614.61
+  },
+  {
+   "t": "2026-09-06 00:46:05",
+   "equity": 10654.23
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -3908,8 +3919,8 @@
   "LINK/USD": "bull",
   "AVAX/USD": "bear",
   "DOT/USD": "bear",
-  "DOGE/USD": "bear",
-  "LTC/USD": "bear",
+  "DOGE/USD": "neutral",
+  "LTC/USD": "bull",
   "BCH/USD": "bear",
   "ATOM/USD": "bear",
   "UNI/USD": "bull",
