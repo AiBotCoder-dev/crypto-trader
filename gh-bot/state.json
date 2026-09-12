@@ -1,5 +1,5 @@
 {
- "cash": 3770.717829997754,
+ "cash": 4399.644504019209,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -56,13 +56,6 @@
    "qty": 13.017787175854787,
    "stake": 710.4052095265451,
    "open_time": "2026-09-06T00:46:05"
-  },
-  {
-   "pair": "ATOM/USD",
-   "open_price": 1.8275,
-   "qty": 384.2572492389139,
-   "stake": 704.0606807540757,
-   "open_time": "2026-09-09T04:10:31"
   }
  ],
  "closed_trades": [
@@ -86,6 +79,17 @@
    "profit_pct": -6.69,
    "open_time": "2026-09-09T04:10:31",
    "close_time": "2026-09-11 00:53:53",
+   "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "ATOM/USD",
+   "open_price": 1.8275,
+   "close_price": 1.641,
+   "stake": 704.0606807540757,
+   "profit_abs": -75.13,
+   "profit_pct": -10.67,
+   "open_time": "2026-09-09T04:10:31",
+   "close_time": "2026-09-12 00:01:24",
    "exit_reason": "regime_exit"
   }
  ],
@@ -4073,6 +4077,10 @@
   {
    "t": "2026-09-11 21:37:52",
    "equity": 10208.08
+  },
+  {
+   "t": "2026-09-12 00:01:24",
+   "equity": 10177.72
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -4088,7 +4096,7 @@
   "DOGE/USD": "bear",
   "LTC/USD": "neutral",
   "BCH/USD": "bear",
-  "ATOM/USD": "bull",
+  "ATOM/USD": "bear",
   "UNI/USD": "bull",
   "AAVE/USD": "bull",
   "FIL/USD": "bear"
