@@ -1,5 +1,5 @@
 {
- "cash": 4399.644504019209,
+ "cash": 3721.701369500378,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -56,6 +56,13 @@
    "qty": 13.017787175854787,
    "stake": 710.4052095265451,
    "open_time": "2026-09-06T00:46:05"
+  },
+  {
+   "pair": "FIL/USD",
+   "open_price": 0.981,
+   "qty": 689.2767404373928,
+   "stake": 677.9431345188314,
+   "open_time": "2026-09-14T00:54:36"
   }
  ],
  "closed_trades": [
@@ -4133,6 +4140,10 @@
   {
    "t": "2026-09-13 23:03:25",
    "equity": 10146.83
+  },
+  {
+   "t": "2026-09-14 00:54:36",
+   "equity": 10167.38
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -4140,7 +4151,7 @@
   "BTC/USD": "bull",
   "ETH/USD": "bull",
   "SOL/USD": "bull",
-  "XRP/USD": "bull",
+  "XRP/USD": "neutral",
   "ADA/USD": "bear",
   "LINK/USD": "bull",
   "AVAX/USD": "bear",
@@ -4151,6 +4162,6 @@
   "ATOM/USD": "bear",
   "UNI/USD": "bull",
   "AAVE/USD": "bull",
-  "FIL/USD": "bear"
+  "FIL/USD": "bull"
  }
 }
