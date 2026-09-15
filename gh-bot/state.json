@@ -1,5 +1,5 @@
 {
- "cash": 3721.701369500378,
+ "cash": 3624.635839876445,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -59,10 +59,10 @@
   },
   {
    "pair": "FIL/USD",
-   "open_price": 0.981,
-   "qty": 689.2767404373928,
-   "stake": 677.9431345188314,
-   "open_time": "2026-09-14T00:54:36"
+   "open_price": 0.821,
+   "qty": 803.6181831231103,
+   "stake": 661.490403392895,
+   "open_time": "2026-09-15T21:12:08"
   }
  ],
  "closed_trades": [
@@ -98,6 +98,17 @@
    "open_time": "2026-09-09T04:10:31",
    "close_time": "2026-09-12 00:01:24",
    "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "FIL/USD",
+   "open_price": 0.981,
+   "close_price": 0.821,
+   "stake": 677.9431345188314,
+   "profit_abs": -113.52,
+   "profit_pct": -16.74,
+   "open_time": "2026-09-14T00:54:36",
+   "close_time": "2026-09-15 21:12:08",
+   "exit_reason": "stop_loss"
   }
  ],
  "equity_history": [
@@ -4176,6 +4187,10 @@
   {
    "t": "2026-09-15 18:03:48",
    "equity": 10119.83
+  },
+  {
+   "t": "2026-09-15 21:12:08",
+   "equity": 9919.16
   }
  ],
  "created_at": "2026-06-11 22:35:22",
