@@ -1,5 +1,5 @@
 {
- "cash": 3624.635839876445,
+ "cash": 4856.736820556945,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -30,13 +30,6 @@
    "open_time": "2026-08-22T01:36:11"
   },
   {
-   "pair": "XRP/USD",
-   "open_price": 1.48598,
-   "qty": 451.37802498193014,
-   "stake": 672.487184241677,
-   "open_time": "2026-08-22T01:36:11"
-  },
-  {
    "pair": "UNI/USD",
    "open_price": 4.2509,
    "qty": 157.78746090537265,
@@ -56,13 +49,6 @@
    "qty": 13.017787175854787,
    "stake": 710.4052095265451,
    "open_time": "2026-09-06T00:46:05"
-  },
-  {
-   "pair": "FIL/USD",
-   "open_price": 0.821,
-   "qty": 803.6181831231103,
-   "stake": 661.490403392895,
-   "open_time": "2026-09-15T21:12:08"
   }
  ],
  "closed_trades": [
@@ -109,6 +95,28 @@
    "open_time": "2026-09-14T00:54:36",
    "close_time": "2026-09-15 21:12:08",
    "exit_reason": "stop_loss"
+  },
+  {
+   "pair": "XRP/USD",
+   "open_price": 1.48598,
+   "close_price": 1.28398,
+   "stake": 672.487184241677,
+   "profit_abs": -94.43,
+   "profit_pct": -14.04,
+   "open_time": "2026-08-22T01:36:11",
+   "close_time": "2026-09-16 00:05:21",
+   "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "FIL/USD",
+   "open_price": 0.821,
+   "close_price": 0.816,
+   "stake": 661.490403392895,
+   "profit_abs": -7.44,
+   "profit_pct": -1.13,
+   "open_time": "2026-09-15T21:12:08",
+   "close_time": "2026-09-16 00:05:21",
+   "exit_reason": "regime_exit"
   }
  ],
  "equity_history": [
@@ -4191,6 +4199,10 @@
   {
    "t": "2026-09-15 21:12:08",
    "equity": 9919.16
+  },
+  {
+   "t": "2026-09-16 00:05:21",
+   "equity": 9918.19
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -4198,7 +4210,7 @@
   "BTC/USD": "bull",
   "ETH/USD": "bull",
   "SOL/USD": "bull",
-  "XRP/USD": "bull",
+  "XRP/USD": "bear",
   "ADA/USD": "bear",
   "LINK/USD": "bull",
   "AVAX/USD": "bear",
@@ -4209,6 +4221,6 @@
   "ATOM/USD": "bear",
   "UNI/USD": "bull",
   "AAVE/USD": "bull",
-  "FIL/USD": "bull"
+  "FIL/USD": "bear"
  }
 }
