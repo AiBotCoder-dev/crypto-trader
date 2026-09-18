@@ -4255,6 +4255,10 @@
   {
    "t": "2026-09-18 07:16:15",
    "equity": 10549.29
+  },
+  {
+   "t": "2026-09-18 12:51:42",
+   "equity": 10582.67
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -4272,7 +4276,6 @@
   "BCH/USD": "bear",
   "ATOM/USD": "bear",
   "UNI/USD": "bull",
-  "AAVE/USD": "bull",
-  "FIL/USD": "bear"
+  "AAVE/USD": "bull"
  }
 }
