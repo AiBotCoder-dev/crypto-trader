@@ -1,5 +1,5 @@
 {
- "cash": 3413.1041998257165,
+ "cash": 2694.793209825303,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -63,6 +63,13 @@
    "qty": 749.9370707902743,
    "stake": 721.816310365614,
    "open_time": "2026-09-19T01:04:32"
+  },
+  {
+   "pair": "AVAX/USD",
+   "open_price": 10.521,
+   "qty": 68.09650997304557,
+   "stake": 718.3109900004135,
+   "open_time": "2026-09-20T00:53:42"
   }
  ],
  "closed_trades": [
@@ -4313,6 +4320,10 @@
   {
    "t": "2026-09-19 22:49:40",
    "equity": 10761.6
+  },
+  {
+   "t": "2026-09-20 00:53:42",
+   "equity": 10772.8
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -4323,9 +4334,9 @@
   "XRP/USD": "bull",
   "ADA/USD": "neutral",
   "LINK/USD": "bull",
-  "AVAX/USD": "neutral",
+  "AVAX/USD": "bull",
   "DOT/USD": "neutral",
-  "DOGE/USD": "bear",
+  "DOGE/USD": "neutral",
   "LTC/USD": "bull",
   "BCH/USD": "bear",
   "ATOM/USD": "neutral",
