@@ -1,5 +1,5 @@
 {
- "cash": 326.30963806193915,
+ "cash": 990.5452616068224,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -49,13 +49,6 @@
    "qty": 13.017787175854787,
    "stake": 710.4052095265451,
    "open_time": "2026-09-06T00:46:05"
-  },
-  {
-   "pair": "XRP/USD",
-   "open_price": 1.4074,
-   "qty": 511.53871533228886,
-   "stake": 721.816310365614,
-   "open_time": "2026-09-19T01:04:32"
   },
   {
    "pair": "FIL/USD",
@@ -202,6 +195,17 @@
    "profit_pct": -5.69,
    "open_time": "2026-10-07T13:03:34",
    "close_time": "2026-10-09 00:13:40",
+   "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "XRP/USD",
+   "open_price": 1.4074,
+   "close_price": 1.30189,
+   "stake": 721.816310365614,
+   "profit_abs": -57.58,
+   "profit_pct": -7.98,
+   "open_time": "2026-09-19T01:04:32",
+   "close_time": "2026-10-17 01:11:58",
    "exit_reason": "regime_exit"
   }
  ],
@@ -4897,6 +4901,10 @@
   {
    "t": "2026-10-16 22:42:52",
    "equity": 10291.33
+  },
+  {
+   "t": "2026-10-17 01:11:58",
+   "equity": 10270.23
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -4904,7 +4912,7 @@
   "BTC/USD": "bull",
   "ETH/USD": "bull",
   "SOL/USD": "bull",
-  "XRP/USD": "neutral",
+  "XRP/USD": "bear",
   "ADA/USD": "neutral",
   "LINK/USD": "bull",
   "AVAX/USD": "bull",
@@ -4912,7 +4920,7 @@
   "DOGE/USD": "bear",
   "LTC/USD": "bull",
   "BCH/USD": "bear",
-  "ATOM/USD": "neutral",
+  "ATOM/USD": "bull",
   "UNI/USD": "bull",
   "AAVE/USD": "bull",
   "FIL/USD": "bull"
