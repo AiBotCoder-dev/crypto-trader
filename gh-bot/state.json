@@ -1,5 +1,5 @@
 {
- "cash": 1605.6806523738974,
+ "cash": 2902.09696073174,
  "open_trades": [
   {
    "pair": "ETH/USD",
@@ -56,20 +56,6 @@
    "qty": 749.9370707902743,
    "stake": 721.816310365614,
    "open_time": "2026-09-19T01:04:32"
-  },
-  {
-   "pair": "DOT/USD",
-   "open_price": 1.1885,
-   "qty": 623.1298189141683,
-   "stake": 742.5203426704321,
-   "open_time": "2026-09-22T04:20:42"
-  },
-  {
-   "pair": "ATOM/USD",
-   "open_price": 1.7716,
-   "qty": 392.33821877396923,
-   "stake": 696.8782718868698,
-   "open_time": "2026-10-09T00:13:40"
   },
   {
    "pair": "AVAX/USD",
@@ -222,6 +208,28 @@
    "open_time": "2026-09-20T00:53:42",
    "close_time": "2026-10-24 10:41:09",
    "exit_reason": "stop_loss"
+  },
+  {
+   "pair": "DOT/USD",
+   "open_price": 1.1885,
+   "close_price": 1.0527,
+   "stake": 742.5203426704321,
+   "profit_abs": -88.26,
+   "profit_pct": -11.89,
+   "open_time": "2026-09-22T04:20:42",
+   "close_time": "2026-10-25 00:57:17",
+   "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "ATOM/USD",
+   "open_price": 1.7716,
+   "close_price": 1.641,
+   "stake": 696.8782718868698,
+   "profit_abs": -54.73,
+   "profit_pct": -7.85,
+   "open_time": "2026-10-09T00:13:40",
+   "close_time": "2026-10-25 00:57:17",
+   "exit_reason": "regime_exit"
   }
  ],
  "equity_history": [
@@ -5096,6 +5104,10 @@
   {
    "t": "2026-10-24 23:02:26",
    "equity": 9606.4
+  },
+  {
+   "t": "2026-10-25 00:57:17",
+   "equity": 9669.53
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -5107,13 +5119,13 @@
   "ADA/USD": "bear",
   "LINK/USD": "bull",
   "AVAX/USD": "bull",
-  "DOT/USD": "neutral",
+  "DOT/USD": "bear",
   "DOGE/USD": "bear",
   "LTC/USD": "bull",
   "BCH/USD": "bear",
-  "ATOM/USD": "neutral",
+  "ATOM/USD": "bear",
   "UNI/USD": "bull",
   "AAVE/USD": "bull",
-  "FIL/USD": "bull"
+  "FIL/USD": "neutral"
  }
 }
