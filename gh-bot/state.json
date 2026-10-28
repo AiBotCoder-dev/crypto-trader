@@ -5168,6 +5168,10 @@
   {
    "t": "2026-10-27 23:39:39",
    "equity": 9628.49
+  },
+  {
+   "t": "2026-10-28 05:05:15",
+   "equity": 9673.51
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -5181,7 +5185,7 @@
   "AVAX/USD": "neutral",
   "DOT/USD": "bear",
   "DOGE/USD": "bear",
-  "LTC/USD": "neutral",
+  "LTC/USD": "bull",
   "BCH/USD": "bear",
   "ATOM/USD": "bear",
   "UNI/USD": "bull",
