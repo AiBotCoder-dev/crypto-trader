@@ -1,184 +1,184 @@
 {
- "generated_at": "2026-11-02 18:05:09",
+ "generated_at": "2026-11-03 00:53:21",
  "exchange": "kraken",
  "timeframe": "1d",
  "strategy": "RegimeHold (200-day EMA, +2%/-3% bands, no profit caps)",
  "dry_run": true,
  "start_balance": 10000.0,
- "cash": 4104.17,
- "equity": 9230.28,
+ "cash": 5459.47,
+ "equity": 9184.89,
  "stats": {
-  "closed_profit_abs": -1224.15,
-  "trade_count": 18,
+  "closed_profit_abs": -1251.74,
+  "trade_count": 20,
   "wins": 0,
-  "losses": 18,
+  "losses": 20,
   "win_rate": 0.0
  },
  "signals": [
   {
    "pair": "AAVE/USD",
-   "price": 128.07,
-   "ema200": 123.94851,
+   "price": 126.1,
+   "ema200": 123.809877,
    "regime": "bull",
    "holding": true,
-   "entry_level": 126.427481,
-   "exit_level": 120.230055,
+   "entry_level": 126.286074,
+   "exit_level": 120.09558,
    "stop_level": 111.129,
-   "distance_pct": -6.12
+   "distance_pct": -4.76
   },
   {
    "pair": "ADA/USD",
-   "price": 0.188434,
-   "ema200": 0.226064,
+   "price": 0.189498,
+   "ema200": 0.225363,
    "regime": "bear",
    "holding": false,
-   "entry_level": 0.230585,
-   "exit_level": 0.219282,
+   "entry_level": 0.22987,
+   "exit_level": 0.218602,
    "stop_level": null,
-   "distance_pct": 22.37
+   "distance_pct": 21.3
   },
   {
    "pair": "ATOM/USD",
-   "price": 1.4254,
-   "ema200": 1.726347,
+   "price": 1.429,
+   "ema200": 1.724857,
    "regime": "bear",
    "holding": false,
-   "entry_level": 1.760874,
-   "exit_level": 1.674557,
+   "entry_level": 1.759354,
+   "exit_level": 1.673111,
    "stop_level": null,
-   "distance_pct": 23.54
+   "distance_pct": 23.12
   },
   {
    "pair": "AVAX/USD",
-   "price": 8.381,
-   "ema200": 8.835387,
-   "regime": "neutral",
+   "price": 8.396,
+   "ema200": 8.818778,
+   "regime": "bear",
    "holding": false,
-   "entry_level": 9.012095,
-   "exit_level": 8.570326,
+   "entry_level": 8.995153,
+   "exit_level": 8.554214,
    "stop_level": null,
-   "distance_pct": 7.53
+   "distance_pct": 7.14
   },
   {
    "pair": "BCH/USD",
-   "price": 274.52,
-   "ema200": 307.935201,
+   "price": 276.49,
+   "ema200": 307.75232,
    "regime": "bear",
    "holding": false,
-   "entry_level": 314.093905,
-   "exit_level": 298.697145,
+   "entry_level": 313.907366,
+   "exit_level": 298.51975,
    "stop_level": null,
-   "distance_pct": 14.42
+   "distance_pct": 13.53
   },
   {
    "pair": "BTC/USD",
-   "price": 77183.6,
-   "ema200": 75994.855501,
-   "regime": "bull",
+   "price": 76986.9,
+   "ema200": 75989.351182,
+   "regime": "neutral",
    "holding": true,
-   "entry_level": 77514.752611,
-   "exit_level": 73715.009836,
+   "entry_level": 77509.138206,
+   "exit_level": 73709.670647,
    "stop_level": 66373.015,
-   "distance_pct": -4.49
+   "distance_pct": -4.26
   },
   {
    "pair": "DOGE/USD",
-   "price": 0.074175,
-   "ema200": 0.088503,
+   "price": 0.074351,
+   "ema200": 0.088138,
    "regime": "bear",
    "holding": false,
-   "entry_level": 0.090273,
-   "exit_level": 0.085848,
+   "entry_level": 0.0899,
+   "exit_level": 0.085494,
    "stop_level": null,
-   "distance_pct": 21.7
+   "distance_pct": 20.91
   },
   {
    "pair": "DOT/USD",
-   "price": 0.9412,
-   "ema200": 1.118203,
+   "price": 0.9439,
+   "ema200": 1.114681,
    "regime": "bear",
    "holding": false,
-   "entry_level": 1.140567,
-   "exit_level": 1.084656,
+   "entry_level": 1.136974,
+   "exit_level": 1.08124,
    "stop_level": null,
-   "distance_pct": 21.18
+   "distance_pct": 20.45
   },
   {
    "pair": "ETH/USD",
-   "price": 2260.66,
-   "ema200": 2306.357807,
+   "price": 2253.71,
+   "ema200": 2302.643744,
    "regime": "neutral",
    "holding": true,
-   "entry_level": 2352.484963,
-   "exit_level": 2237.167072,
+   "entry_level": 2348.696619,
+   "exit_level": 2233.564432,
    "stop_level": 1921.476,
-   "distance_pct": -1.04
+   "distance_pct": -0.89
   },
   {
    "pair": "FIL/USD",
-   "price": 0.858,
-   "ema200": 0.92958,
+   "price": 0.872,
+   "ema200": 0.927921,
    "regime": "bear",
    "holding": false,
-   "entry_level": 0.948172,
-   "exit_level": 0.901693,
+   "entry_level": 0.94648,
+   "exit_level": 0.900083,
    "stop_level": null,
-   "distance_pct": 10.51
+   "distance_pct": 8.54
   },
   {
    "pair": "LINK/USD",
-   "price": 11.14425,
-   "ema200": 10.871101,
+   "price": 11.11927,
+   "ema200": 10.862191,
    "regime": "bull",
    "holding": true,
-   "entry_level": 11.088523,
-   "exit_level": 10.544968,
+   "entry_level": 11.079435,
+   "exit_level": 10.536325,
    "stop_level": 8.92075,
-   "distance_pct": -5.38
+   "distance_pct": -5.24
   },
   {
    "pair": "LTC/USD",
-   "price": 54.1,
-   "ema200": 55.977921,
-   "regime": "neutral",
-   "holding": true,
-   "entry_level": 57.097479,
-   "exit_level": 54.298583,
-   "stop_level": 46.2655,
-   "distance_pct": 0.37
+   "price": 53.93,
+   "ema200": 55.935648,
+   "regime": "bear",
+   "holding": false,
+   "entry_level": 57.054361,
+   "exit_level": 54.257579,
+   "stop_level": null,
+   "distance_pct": 5.79
   },
   {
    "pair": "SOL/USD",
-   "price": 92.32,
-   "ema200": 96.8671,
-   "regime": "neutral",
-   "holding": true,
-   "entry_level": 98.804442,
-   "exit_level": 93.961087,
-   "stop_level": 80.0785,
-   "distance_pct": 1.78
+   "price": 92.25,
+   "ema200": 96.916043,
+   "regime": "bear",
+   "holding": false,
+   "entry_level": 98.854364,
+   "exit_level": 94.008562,
+   "stop_level": null,
+   "distance_pct": 7.16
   },
   {
    "pair": "UNI/USD",
-   "price": 7.1911,
-   "ema200": 5.559085,
+   "price": 7.0357,
+   "ema200": 5.562345,
    "regime": "bull",
    "holding": true,
-   "entry_level": 5.670267,
-   "exit_level": 5.392312,
+   "entry_level": 5.673592,
+   "exit_level": 5.395475,
    "stop_level": 3.613265,
-   "distance_pct": -25.01
+   "distance_pct": -23.31
   },
   {
    "pair": "XRP/USD",
-   "price": 1.24255,
-   "ema200": 1.355967,
+   "price": 1.24863,
+   "ema200": 1.352785,
    "regime": "bear",
    "holding": false,
-   "entry_level": 1.383086,
-   "exit_level": 1.315288,
+   "entry_level": 1.379841,
+   "exit_level": 1.312202,
    "stop_level": null,
-   "distance_pct": 11.31
+   "distance_pct": 10.51
   }
  ],
  "open_trades": [
@@ -188,9 +188,9 @@
    "qty": 0.29170272023901295,
    "stake": 661.1304404085654,
    "open_time": "2026-08-20T01:37:27",
-   "current_price": 2260.66,
-   "profit_pct": 0.0,
-   "profit_abs": -1.69
+   "current_price": 2253.71,
+   "profit_pct": -0.3,
+   "profit_abs": -3.72
   },
   {
    "pair": "LINK/USD",
@@ -198,9 +198,9 @@
    "qty": 62.83101488932855,
    "stake": 661.1304404085654,
    "open_time": "2026-08-20T01:37:27",
-   "current_price": 11.14425,
-   "profit_pct": 6.19,
-   "profit_abs": 39.07
+   "current_price": 11.11927,
+   "profit_pct": 5.95,
+   "profit_abs": 37.5
   },
   {
    "pair": "BTC/USD",
@@ -208,19 +208,9 @@
    "qty": 0.008589754585176692,
    "stake": 672.487184241677,
    "open_time": "2026-08-22T01:36:11",
-   "current_price": 77183.6,
-   "profit_pct": -1.16,
-   "profit_abs": -9.5
-  },
-  {
-   "pair": "SOL/USD",
-   "open_price": 94.21,
-   "qty": 7.119612754088193,
-   "stake": 672.487184241677,
-   "open_time": "2026-08-22T01:36:11",
-   "current_price": 92.32,
-   "profit_pct": -2.01,
-   "profit_abs": -15.2
+   "current_price": 76986.9,
+   "profit_pct": -1.41,
+   "profit_abs": -11.19
   },
   {
    "pair": "UNI/USD",
@@ -228,19 +218,9 @@
    "qty": 157.78746090537265,
    "stake": 672.487184241677,
    "open_time": "2026-08-22T01:36:11",
-   "current_price": 7.1911,
-   "profit_pct": 69.17,
-   "profit_abs": 462.18
-  },
-  {
-   "pair": "LTC/USD",
-   "open_price": 54.43,
-   "qty": 13.017787175854787,
-   "stake": 710.4052095265451,
-   "open_time": "2026-09-06T00:46:05",
-   "current_price": 54.1,
-   "profit_pct": -0.61,
-   "profit_abs": -6.14
+   "current_price": 7.0357,
+   "profit_pct": 65.51,
+   "profit_abs": 437.66
   },
   {
    "pair": "AAVE/USD",
@@ -248,12 +228,34 @@
    "qty": 4.741651833811378,
    "stake": 621.5395636179062,
    "open_time": "2026-10-31T00:36:00",
-   "current_price": 128.07,
-   "profit_pct": -2.04,
-   "profit_abs": -14.28
+   "current_price": 126.1,
+   "profit_pct": -3.55,
+   "profit_abs": -23.62
   }
  ],
  "closed_trades": [
+  {
+   "pair": "LTC/USD",
+   "open_price": 54.43,
+   "close_price": 53.93,
+   "stake": 710.4052095265451,
+   "profit_abs": -10.18,
+   "profit_pct": -1.43,
+   "open_time": "2026-09-06T00:46:05",
+   "close_time": "2026-11-03 00:53:21",
+   "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "SOL/USD",
+   "open_price": 94.21,
+   "close_price": 92.25,
+   "stake": 672.487184241677,
+   "profit_abs": -17.41,
+   "profit_pct": -2.59,
+   "open_time": "2026-08-22T01:36:11",
+   "close_time": "2026-11-03 00:53:21",
+   "exit_reason": "regime_exit"
+  },
   {
    "pair": "AVAX/USD",
    "open_price": 8.917,
@@ -5485,6 +5487,10 @@
   {
    "t": "2026-11-02 18:05:09",
    "equity": 9230.28
+  },
+  {
+   "t": "2026-11-03 00:53:21",
+   "equity": 9184.89
   }
  ]
 }
