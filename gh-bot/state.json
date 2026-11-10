@@ -5407,6 +5407,10 @@
   {
    "t": "2026-11-09 22:10:32",
    "equity": 9149.38
+  },
+  {
+   "t": "2026-11-10 04:33:01",
+   "equity": 9114.08
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -5416,15 +5420,15 @@
   "SOL/USD": "bear",
   "XRP/USD": "bear",
   "ADA/USD": "bear",
-  "LINK/USD": "bear",
-  "AVAX/USD": "bear",
+  "LINK/USD": "neutral",
+  "AVAX/USD": "neutral",
   "DOT/USD": "bear",
   "DOGE/USD": "bear",
   "LTC/USD": "bear",
   "BCH/USD": "bear",
   "ATOM/USD": "bear",
   "UNI/USD": "bull",
-  "AAVE/USD": "neutral",
+  "AAVE/USD": "bull",
   "FIL/USD": "bear"
  }
 }
