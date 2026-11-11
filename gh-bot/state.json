@@ -1,13 +1,6 @@
 {
- "cash": 6772.387405984561,
+ "cash": 7400.52331432572,
  "open_trades": [
-  {
-   "pair": "BTC/USD",
-   "open_price": 78085.9,
-   "qty": 0.008589754585176692,
-   "stake": 672.487184241677,
-   "open_time": "2026-08-22T01:36:11"
-  },
   {
    "pair": "UNI/USD",
    "open_price": 4.2509,
@@ -264,6 +257,17 @@
    "profit_pct": 0.27,
    "open_time": "2026-08-20T01:37:27",
    "close_time": "2026-11-09 02:31:05",
+   "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "BTC/USD",
+   "open_price": 78085.9,
+   "close_price": 73316.8,
+   "stake": 672.487184241677,
+   "profit_abs": -44.35,
+   "profit_pct": -6.6,
+   "open_time": "2026-08-22T01:36:11",
+   "close_time": "2026-11-11 01:08:59",
    "exit_reason": "regime_exit"
   }
  ],
@@ -5419,24 +5423,28 @@
   {
    "t": "2026-11-10 20:45:02",
    "equity": 9043.9
+  },
+  {
+   "t": "2026-11-11 01:08:59",
+   "equity": 9041.1
   }
  ],
  "created_at": "2026-06-11 22:35:22",
  "regimes": {
-  "BTC/USD": "neutral",
+  "BTC/USD": "bear",
   "ETH/USD": "bear",
   "SOL/USD": "bear",
   "XRP/USD": "bear",
   "ADA/USD": "bear",
-  "LINK/USD": "neutral",
-  "AVAX/USD": "neutral",
+  "LINK/USD": "bear",
+  "AVAX/USD": "bear",
   "DOT/USD": "bear",
   "DOGE/USD": "bear",
   "LTC/USD": "bear",
   "BCH/USD": "bear",
   "ATOM/USD": "bear",
   "UNI/USD": "bull",
-  "AAVE/USD": "bull",
+  "AAVE/USD": "neutral",
   "FIL/USD": "bear"
  }
 }
