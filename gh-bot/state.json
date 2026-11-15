@@ -1,14 +1,6 @@
 {
- "cash": 7951.631386330456,
- "open_trades": [
-  {
-   "pair": "UNI/USD",
-   "open_price": 4.2509,
-   "qty": 157.78746090537265,
-   "stake": 672.487184241677,
-   "open_time": "2026-08-22T01:36:11"
-  }
- ],
+ "cash": 8742.231556104314,
+ "open_trades": [],
  "closed_trades": [
   {
    "pair": "UNI/USD",
@@ -272,6 +264,17 @@
    "profit_pct": -11.33,
    "open_time": "2026-10-31T00:36:00",
    "close_time": "2026-11-12 06:46:55",
+   "exit_reason": "regime_exit"
+  },
+  {
+   "pair": "UNI/USD",
+   "open_price": 4.2509,
+   "close_price": 5.0236,
+   "stake": 672.487184241677,
+   "profit_abs": 118.11,
+   "profit_pct": 17.56,
+   "open_time": "2026-08-22T01:36:11",
+   "close_time": "2026-11-15 05:52:28",
    "exit_reason": "regime_exit"
   }
  ],
@@ -5487,6 +5490,10 @@
   {
    "t": "2026-11-14 23:46:53",
    "equity": 8717.28
+  },
+  {
+   "t": "2026-11-15 05:52:28",
+   "equity": 8742.23
   }
  ],
  "created_at": "2026-06-11 22:35:22",
@@ -5503,7 +5510,7 @@
   "LTC/USD": "bear",
   "BCH/USD": "bear",
   "ATOM/USD": "bear",
-  "UNI/USD": "neutral",
+  "UNI/USD": "bear",
   "AAVE/USD": "bear",
   "FIL/USD": "bear"
  }
